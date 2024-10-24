@@ -6,6 +6,7 @@ import FunctionComponent  from "../Component/FunctionComponent";
 import ClassComponent from "../Component/ClassComponent";
 import User from "../Component/User";
 import ContainerComponent from "../Component/ContainerComponent";
+import Props from "../Component/Props";
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <ClassComponent />
       <User /> */}
       <ContainerComponent />
+      <Props />
     </>
   )
 }
