@@ -14,13 +14,15 @@ class ClassComponent extends Component {
     }
 
     decrement = () => {
-        if (this.state.count < 0) {
-            this.setState({count: this.state.count - 1});
-
-        }else { 
-            this.setState({count: 0});
-        }
         
+        // if (this.state.count < 0) {
+        //     this.setState({count: this.state.count - 1});
+
+        // }else { 
+        //     this.setState({count: 0});
+        // }
+        
+        this.state.count < 0 ? this.setState({count: this.state.count - 1}) : this.setState({count: 0});
     }
 
     render() {
