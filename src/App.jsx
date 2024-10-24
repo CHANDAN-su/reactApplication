@@ -5,9 +5,10 @@ import './App.css'
 import FunctionComponent  from "../Component/FunctionComponent";
 import ClassComponent from "../Component/ClassComponent";
 import User from "../Component/User";
-// import ContainerComponent from "../Component/ContainerComponent";
-// import Props from "../Component/Props";
+import ContainerComponent from "../Component/ContainerComponent";
+import Props from "../Component/Props";
 import HierarchicalStructure from "../Component/HierarchicalStructure";
+import Reusability from "../Component/Reusability";
 
 function App() {
   
@@ -18,7 +19,8 @@ function App() {
       <User /> */}
       {/* <ContainerComponent />
       <Props /> */}
-      < HierarchicalStructure />
+      {/* < HierarchicalStructure /> */}
+      < Reusability />
     </>
   )
 }

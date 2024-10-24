@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 const Hearder = () => {
     return <h1>Welcome to header layout</h1>
 }
