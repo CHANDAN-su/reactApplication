@@ -10,6 +10,7 @@ import Props from "../Component/Props";
 import HierarchicalStructure from "../Component/HierarchicalStructure";
 import Reusability from "../Component/Reusability";
 import SeparationofConcerns from "../Component/SeparationofConcerns";
+import JavascriptXML from "../Component/JavascriptXML";
 
 function App() {
   
@@ -22,7 +23,8 @@ function App() {
       <Props /> */}
       {/* < HierarchicalStructure /> */}
       {/* < Reusability /> */}
-      <SeparationofConcerns />
+      {/* <SeparationofConcerns /> */}
+      < JavascriptXML />
     </>
   )
 }
