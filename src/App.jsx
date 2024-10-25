@@ -9,6 +9,7 @@ import ContainerComponent from "../Component/ContainerComponent";
 import Props from "../Component/Props";
 import HierarchicalStructure from "../Component/HierarchicalStructure";
 import Reusability from "../Component/Reusability";
+import SeparationofConcerns from "../Component/SeparationofConcerns";
 
 function App() {
   
@@ -20,7 +21,8 @@ function App() {
       {/* <ContainerComponent />
       <Props /> */}
       {/* < HierarchicalStructure /> */}
-      < Reusability />
+      {/* < Reusability /> */}
+      <SeparationofConcerns />
     </>
   )
 }
