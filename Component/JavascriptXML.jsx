@@ -1,7 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../src/App.css'
 
 const Greeting = ({name}) =>{
+
+  const [isLoggedIN, setIsLoggedIN] = useState(false);
+
+    const handleLogInClick = () => {
+      setIsLoggedIN(true);
+    }
+
+    const handleLogOutClick = () => {
+      setIsLoggedIN(false);
+    }
+
+    let button;
+
+    if(isLoggedIN){
+      button = <button className='divstyle' onClick={handleLogOutClick}>Logout</button>
+    }else{
+      button = <button className='divstyle' onClick={handleLogInClick}>Log in</button>
+    }
 
     const isMoring = new Date().getHours < 12;
 
@@ -30,6 +48,9 @@ const Greeting = ({name}) =>{
               <li key={fr}>{fr}</li>
             ))}
           </ul>
+
+            <h1>{isLoggedIN? "Welcome Back" : "Please Log in"}</h1>
+            {button}
 
         </>
     )
