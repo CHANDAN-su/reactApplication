@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useCallback, useState} from 'react'
 import '../src/App.css'
 
 const Greeting = ({name}) =>{
 
   const [isLoggedIN, setIsLoggedIN] = useState(false);
+  const [hasMessage, setHasMessage] = useState(false);
 
     const handleLogInClick = () => {
       setIsLoggedIN(true);
@@ -54,6 +55,12 @@ const Greeting = ({name}) =>{
 
             <h1>{isLoggedIN ? "Welcome back" : "Please log in"}</h1>
             <button onClick={() => setIsLoggedIN(!isLoggedIN)}>{isLoggedIN ? "Logout" : "Login"}</button>
+
+            <h1>Inbox</h1>
+            {hasMessage && <p>You have new message!</p>}
+            <button onClick={() => setHasMessage(!hasMessage)}>
+              {hasMessage ? "Hide message" : "Show nessage"}
+            </button>
 
         </>
     )
