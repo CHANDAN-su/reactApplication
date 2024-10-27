@@ -7,6 +7,15 @@ function Card({ children }){
     )
 }
 
+function Dialog({header, body}){
+    return (
+        <div className='dialog'>
+            <div className='dialog-header'>{header}</div>
+            <div className='dialog-body'>{body}</div>
+        </div>
+    )
+}
+
 function Compsition() {
   return (
     <>
@@ -18,6 +27,9 @@ function Compsition() {
     <Card>
         <button>Card</button>
     </Card>
+
+    <Dialog header={<h1>Confirmation</h1>} body={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, deleniti?"}/>
+    <Dialog header={<h1>Error</h1>} body={<p>An error occurred. Please try agin later</p>}/>
     </>
   )
 }
