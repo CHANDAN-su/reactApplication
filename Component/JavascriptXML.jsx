@@ -13,6 +13,8 @@ const Greeting = ({name}) =>{
       marginTop: "5px"
     }
 
+    const fruit = ["Apple", "Banana", "Orange"];
+
     return(
         <>
             <h1>Hello: {name}</h1>
@@ -22,6 +24,12 @@ const Greeting = ({name}) =>{
           <div style={{backgroundColor: "red", padding: "10px", border: "1px solid black", color: "blue"}}>Style</div>
           <div style={divStyle}>style 1</div>
           <div className='divstyle'>style 2</div>
+
+          <ul>
+            {fruit.map((fr) => (
+              <li key={fr}>{fr}</li>
+            ))}
+          </ul>
 
         </>
     )
