@@ -5,6 +5,20 @@ const Greeting = ({name}) =>{
 
   const [isLoggedIN, setIsLoggedIN] = useState(false);
   const [hasMessage, setHasMessage] = useState(false);
+  const [status, setStatus] = useState("guest");
+
+  const userShow = () => {
+    switch (status) {
+      case "guest":
+        return <h1>Welcome, Guest</h1>
+      case "user":
+        return <h1>Welvome, Back</h1>
+      case "admin":
+        return <h1>Welcome, Admin!</h1>
+      default:
+        return <h1>Unknown Role</h1>
+    }
+  }
 
     const handleLogInClick = () => {
       setIsLoggedIN(true);
@@ -61,6 +75,11 @@ const Greeting = ({name}) =>{
             <button onClick={() => setHasMessage(!hasMessage)}>
               {hasMessage ? "Hide message" : "Show nessage"}
             </button>
+
+            {userShow()}
+            <button onClick={() => setStatus("guest")}>Guest</button>
+            <button onClick={() => setStatus("user")}>User</button>
+            <button onClick={() => setStatus("admin")}>Admin</button>
 
         </>
     )
