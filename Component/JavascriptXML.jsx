@@ -49,8 +49,11 @@ const Greeting = ({name}) =>{
             ))}
           </ul>
 
-            <h1>{isLoggedIN? "Welcome Back" : "Please Log in"}</h1>
-            {button}
+            {/* <h1>{isLoggedIN? "Welcome Back" : "Please Log in"}</h1>
+            {button} */}
+
+            <h1>{isLoggedIN ? "Welcome back" : "Please log in"}</h1>
+            <button onClick={() => setIsLoggedIN(!isLoggedIN)}>{isLoggedIN ? "Logout" : "Login"}</button>
 
         </>
     )
