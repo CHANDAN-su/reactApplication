@@ -35,10 +35,7 @@ const UsingKeysInLists = () => {
   )
 }
 
-const Greeting = ({ name }) => {
-
-  const [isLoggedIN, setIsLoggedIN] = useState(false);
-  const [hasMessage, setHasMessage] = useState(false);
+const SwitchCaseINReact = () => {
   const [status, setStatus] = useState("guest");
 
 
@@ -55,6 +52,23 @@ const Greeting = ({ name }) => {
         return <h1>Unknown Role</h1>
     }
   }
+
+  return (
+    <>
+    {userShow()}
+      <button onClick={() => setStatus("guest")}>Guest</button>
+      <button onClick={() => setStatus("user")}>User</button>
+      <button onClick={() => setStatus("admin")}>Admin</button>
+    </>
+  )
+}
+
+
+const Greeting = ({ name }) => {
+
+  const [isLoggedIN, setIsLoggedIN] = useState(false);
+  const [hasMessage, setHasMessage] = useState(false);
+  
 
   const handleLogInClick = () => {
     setIsLoggedIN(true);
@@ -114,14 +128,12 @@ const Greeting = ({ name }) => {
         {hasMessage ? "Hide message" : "Show nessage"}
       </button>
 
-      {userShow()}
-      <button onClick={() => setStatus("guest")}>Guest</button>
-      <button onClick={() => setStatus("user")}>User</button>
-      <button onClick={() => setStatus("admin")}>Admin</button>
+      
 
 
       < RenderingAListOfItem />
-      < UsingKeysInLists />      
+      < UsingKeysInLists /> 
+      < SwitchCaseINReact />     
 
     </>
   )
