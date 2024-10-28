@@ -1,13 +1,30 @@
 import React, { useCallback, useState } from 'react'
 import '../src/App.css'
 
+
+const RenderingAListOfItem = () => {
+
+  const fruit = ["Apple", "Banana", "Orange", "Kiwi"];
+
+  return(
+    <ul>
+
+              {fruit.map((val, index) => (
+                <li key={index}>{val}</li>
+              ))}
+              
+            </ul>
+  )
+
+}
+
 const Greeting = ({ name }) => {
 
   const [isLoggedIN, setIsLoggedIN] = useState(false);
   const [hasMessage, setHasMessage] = useState(false);
   const [status, setStatus] = useState("guest");
 
-  
+
 
   const userShow = () => {
     switch (status) {
@@ -90,13 +107,7 @@ const Greeting = ({ name }) => {
       <button onClick={() => setStatus("admin")}>Admin</button>
 
 
-      <ul>
-
-        {fruit.map((val, index) => (
-          <li key={index}>{val}</li>
-        ))}
-
-      </ul>
+      < RenderingAListOfItem />
 
       <ul>
         {todo.map((val) => (
