@@ -75,6 +75,24 @@ const ArrayAndLists = () => {
   )
 }
 
+const Addstyle = () => {
+  const divStyle = {
+    backgroundColor: "red",
+    padding: "30px",
+    border: "2px solid black",
+    color: "blue",
+    marginTop: "5px"
+  }
+
+  return (
+    <>
+    <div style={{ backgroundColor: "red", padding: "10px", border: "1px solid black", color: "blue" }}>Style</div>
+      <div style={divStyle}>style 1</div>
+      <div className='divstyle'>style 2</div>
+    </>
+  )
+}
+
 
 const Greeting = ({ name }) => {
 
@@ -100,15 +118,9 @@ const Greeting = ({ name }) => {
 
   const isMoring = new Date().getHours < 12;
 
-  const divStyle = {
-    backgroundColor: "red",
-    padding: "30px",
-    border: "2px solid black",
-    color: "blue",
-    marginTop: "5px"
-  }
+  
 
-  const fruit = ["Apple", "Banana", "Orange", "Kiwi"];
+  
 
   
 
@@ -118,9 +130,7 @@ const Greeting = ({ name }) => {
       <p>Good: {isMoring ? "Moring" : "Evening"}</p>
       <p>The cureent tine is: {new Date().toString()}</p>
 
-      <div style={{ backgroundColor: "red", padding: "10px", border: "1px solid black", color: "blue" }}>Style</div>
-      <div style={divStyle}>style 1</div>
-      <div className='divstyle'>style 2</div>
+      
 
       
 
@@ -142,7 +152,8 @@ const Greeting = ({ name }) => {
       < RenderingAListOfItem />
       < UsingKeysInLists /> 
       < SwitchCaseINReact /> 
-      < ArrayAndLists />    
+      < ArrayAndLists /> 
+      < Addstyle    />
 
     </>
   )
