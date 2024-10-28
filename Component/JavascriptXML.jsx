@@ -18,6 +18,23 @@ const RenderingAListOfItem = () => {
 
 }
 
+const UsingKeysInLists = () => {
+
+  const todo = [
+    { id: 1, text: 'Learn React' },
+    { id: 2, text: 'Build a Project' },
+    { id: 3, text: 'Deploy the App' }
+  ]
+
+  return (
+    <ul>
+        {todo.map((val) => (
+          <ol key={val.id}>{val.text}</ol>
+        ))}
+      </ul>
+  )
+}
+
 const Greeting = ({ name }) => {
 
   const [isLoggedIN, setIsLoggedIN] = useState(false);
@@ -67,11 +84,7 @@ const Greeting = ({ name }) => {
 
   const fruit = ["Apple", "Banana", "Orange", "Kiwi"];
 
-  const todo = [
-    { id: 1, text: 'Learn React' },
-    { id: 2, text: 'Build a Project' },
-    { id: 3, text: 'Deploy the App' }
-  ]
+  
 
   return (
     <>
@@ -108,12 +121,7 @@ const Greeting = ({ name }) => {
 
 
       < RenderingAListOfItem />
-
-      <ul>
-        {todo.map((val) => (
-          <ol key={val.id}>{val.text}</ol>
-        ))}
-      </ul>
+      < UsingKeysInLists />      
 
     </>
   )
