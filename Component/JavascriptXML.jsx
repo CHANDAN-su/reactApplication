@@ -93,12 +93,8 @@ const Addstyle = () => {
   )
 }
 
-
-const Greeting = ({ name }) => {
-
+const ConditionalRenderingWithIfElse =() => {
   const [isLoggedIN, setIsLoggedIN] = useState(false);
-  const [hasMessage, setHasMessage] = useState(false);
-  
 
   const handleLogInClick = () => {
     setIsLoggedIN(true);
@@ -115,6 +111,24 @@ const Greeting = ({ name }) => {
   } else {
     button = <button className='divstyle' onClick={handleLogInClick}>Log in</button>
   }
+
+  return (
+    <>
+  <h1>{isLoggedIN ? "Welcome back" : "Please log in"}</h1>
+  {button}
+  </>
+  )
+
+}
+
+
+const Greeting = ({ name }) => {
+
+  
+  const [hasMessage, setHasMessage] = useState(false);
+  
+
+  
 
   const isMoring = new Date().getHours < 12;
 
@@ -137,8 +151,8 @@ const Greeting = ({ name }) => {
       {/* <h1>{isLoggedIN? "Welcome Back" : "Please Log in"}</h1>
             {button} */}
 
-      <h1>{isLoggedIN ? "Welcome back" : "Please log in"}</h1>
-      <button onClick={() => setIsLoggedIN(!isLoggedIN)}>{isLoggedIN ? "Logout" : "Login"}</button>
+      
+      {/* <button onClick={() => setIsLoggedIN(!isLoggedIN)}>{isLoggedIN ? "Logout" : "Login"}</button> */}
 
       <h1>Inbox</h1>
       {hasMessage && <p>You have new message!</p>}
@@ -154,6 +168,7 @@ const Greeting = ({ name }) => {
       < SwitchCaseINReact /> 
       < ArrayAndLists /> 
       < Addstyle    />
+      < ConditionalRenderingWithIfElse />
 
     </>
   )
