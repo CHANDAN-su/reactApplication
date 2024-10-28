@@ -121,22 +121,23 @@ const ConditionalRenderingWithIfElse =() => {
 
 }
 
+const ConditionalRenderingWithTernaryOpertor = () => {
+  const [isLoggedIN, setIsLoggedIN] = useState(false);
+
+  return (
+    <>
+    <h1>{isLoggedIN ? "Welcome back" : "Please log in"}</h1>
+            <button onClick={() => setIsLoggedIN(!isLoggedIN)}>{isLoggedIN ? "Logout" : "Login"}</button>
+            </>
+  )
+}
+
 
 const Greeting = ({ name }) => {
 
   
   const [hasMessage, setHasMessage] = useState(false);
-  
-
-  
-
-  const isMoring = new Date().getHours < 12;
-
-  
-
-  
-
-  
+  const isMoring = new Date().getHours < 12;  
 
   return (
     <>
@@ -144,23 +145,11 @@ const Greeting = ({ name }) => {
       <p>Good: {isMoring ? "Moring" : "Evening"}</p>
       <p>The cureent tine is: {new Date().toString()}</p>
 
-      
-
-      
-
-      {/* <h1>{isLoggedIN? "Welcome Back" : "Please Log in"}</h1>
-            {button} */}
-
-      
-      {/* <button onClick={() => setIsLoggedIN(!isLoggedIN)}>{isLoggedIN ? "Logout" : "Login"}</button> */}
-
       <h1>Inbox</h1>
       {hasMessage && <p>You have new message!</p>}
       <button onClick={() => setHasMessage(!hasMessage)}>
         {hasMessage ? "Hide message" : "Show nessage"}
-      </button>
-
-      
+      </button>   
 
 
       < RenderingAListOfItem />
@@ -169,6 +158,7 @@ const Greeting = ({ name }) => {
       < ArrayAndLists /> 
       < Addstyle    />
       < ConditionalRenderingWithIfElse />
+      < ConditionalRenderingWithTernaryOpertor />
 
     </>
   )
