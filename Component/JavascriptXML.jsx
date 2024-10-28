@@ -46,7 +46,7 @@ const Greeting = ({name}) =>{
       marginTop: "5px"
     }
 
-    const fruit = ["Apple", "Banana", "Orange"];
+    const fruit = ["Apple", "Banana", "Orange", "Kiwi"];
 
     return(
         <>
@@ -80,6 +80,15 @@ const Greeting = ({name}) =>{
             <button onClick={() => setStatus("guest")}>Guest</button>
             <button onClick={() => setStatus("user")}>User</button>
             <button onClick={() => setStatus("admin")}>Admin</button>
+
+
+            <ul>
+
+              {fruit.map((val, index) => (
+                <li key={index}>{val}</li>
+              ))}
+              
+            </ul>
 
         </>
     )
