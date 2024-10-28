@@ -37,14 +37,39 @@ function DynamicList() {
   };
 
   return (
-  <>
-    <ul>
-      {itens.map((val, index) => (
-        <li key={index}>{val}</li>
-      ))}
-    </ul>
-    <button onClick={additem}>Additem</button>
-  </>
+    <>
+      <ul>
+        {itens.map((val, index) => (
+          <li key={index}>{val}</li>
+        ))}
+      </ul>
+      <button onClick={additem}>Additem</button>
+    </>
+  );
+}
+
+function TaskManger() {
+  const [task, setTask] = useState([
+    { id: "t1", task: "task 1" },
+    { id: "t2", task: "task 2" },
+  ]);
+
+  const addTask = () => {
+    setTask([
+      ...task,
+      { id: `t${task.length + 1}`, task: `task ${task.length + 1}` },
+    ]);
+  };
+
+  return (
+    <>
+      <ul>
+        {task.map((val) => (
+          <li key={val.id}>{val.task}</li>
+        ))}
+      </ul>
+      <button onClick={addTask}>AddTask</button>
+    </>
   );
 }
 
@@ -199,7 +224,8 @@ function JavascriptXML() {
       <ConditionalRenderingWithIfElse />
       <ConditionalRenderingWithTernaryOpertor />
       <ConditionalRenderingWithLogiclOpertor />
-      < DynamicList />
+      <DynamicList />
+      < TaskManger />
     </>
   );
 }
