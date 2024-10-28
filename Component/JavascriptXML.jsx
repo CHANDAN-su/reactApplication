@@ -63,6 +63,18 @@ const SwitchCaseINReact = () => {
   )
 }
 
+const ArrayAndLists = () => {
+  const fruit = ["Apple", "Banana", "Orange"];
+
+  return(
+    <ul>
+        {fruit.map((fr) => (
+          <li key={fr}>{fr}</li>
+        ))}
+      </ul>
+  )
+}
+
 
 const Greeting = ({ name }) => {
 
@@ -110,11 +122,7 @@ const Greeting = ({ name }) => {
       <div style={divStyle}>style 1</div>
       <div className='divstyle'>style 2</div>
 
-      <ul>
-        {fruit.map((fr) => (
-          <li key={fr}>{fr}</li>
-        ))}
-      </ul>
+      
 
       {/* <h1>{isLoggedIN? "Welcome Back" : "Please Log in"}</h1>
             {button} */}
@@ -133,7 +141,8 @@ const Greeting = ({ name }) => {
 
       < RenderingAListOfItem />
       < UsingKeysInLists /> 
-      < SwitchCaseINReact />     
+      < SwitchCaseINReact /> 
+      < ArrayAndLists />    
 
     </>
   )
