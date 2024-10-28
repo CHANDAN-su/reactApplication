@@ -25,8 +25,8 @@ function App() {
       {/* < HierarchicalStructure /> */}
       {/* < Reusability /> */}
       {/* <SeparationofConcerns /> */}
-      {/* < JavascriptXML /> */}
-      <Compsition/>
+      < JavascriptXML />
+      {/* <Compsition/> */}
     </>
   )
 }
