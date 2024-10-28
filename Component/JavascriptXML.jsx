@@ -29,6 +29,25 @@ const UsingKeysInLists = () => {
   );
 };
 
+function DynamicList() {
+  const [itens, seItems] = useState(["item 1", "item 2", "item 3"]);
+
+  const additem = () => {
+    seItems([...itens, `item ${itens.length + 1}`]);
+  };
+
+  return (
+  <>
+    <ul>
+      {itens.map((val, index) => (
+        <li key={index}>{val}</li>
+      ))}
+    </ul>
+    <button onClick={additem}>Additem</button>
+  </>
+  );
+}
+
 const SwitchCaseINReact = () => {
   const [status, setStatus] = useState("guest");
 
@@ -164,25 +183,25 @@ const Greeting = ({ name }) => {
       <h1>Hello: {name}</h1>
       <p>Good: {isMoring ? "Moring" : "Evening"}</p>
       <p>The cureent tine is: {new Date().toString()}</p>
-
     </>
   );
 };
 
 function JavascriptXML() {
   return (
-  <>
-  <Greeting name={"chanan thakur"} />;
-  <RenderingAListOfItem />
+    <>
+      <Greeting name={"chanan thakur"} />;
+      <RenderingAListOfItem />
       <UsingKeysInLists />
       <SwitchCaseINReact />
       <ArrayAndLists />
       <Addstyle />
       <ConditionalRenderingWithIfElse />
       <ConditionalRenderingWithTernaryOpertor />
-  </>
-  )
+      <ConditionalRenderingWithLogiclOpertor />
+      < DynamicList />
+    </>
+  );
 }
-
 
 export default JavascriptXML;
