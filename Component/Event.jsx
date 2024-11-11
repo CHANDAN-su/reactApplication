@@ -73,6 +73,18 @@ class EventSecond extends Component {
   }
 }
 
+function GreetUser(){
+
+  const Greet = (user) => {
+    alert(`Hello, ${user}!`);
+  }
+
+  return(
+    <>
+      <button onClick={() => Greet("chandan")}>Hello</button>
+    </>
+  )
+}
 
 
 function AllEvent(){
@@ -82,6 +94,7 @@ function AllEvent(){
       <EventDetails/>
       <Event/>
       <EventSecond/>
+      <GreetUser/>
     </>
   )
 }
