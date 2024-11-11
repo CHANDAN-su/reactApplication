@@ -86,6 +86,18 @@ function GreetUser(){
   )
 }
 
+function GreetUserBind(){
+
+  const Greet = (user) => {
+    alert(`Hello, ${user}!`);
+  }
+
+  return(
+    <>
+      <button onClick={Greet.bind(null, "chandan")}>Hello</button>
+    </>
+  )
+}
 
 function AllEvent(){
   return(
@@ -95,6 +107,7 @@ function AllEvent(){
       <Event/>
       <EventSecond/>
       <GreetUser/>
+      <GreetUserBind/>
     </>
   )
 }
