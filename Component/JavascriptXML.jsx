@@ -205,7 +205,7 @@ const Greeting = ({ name }) => {
 
   return (
     <>
-      <h1>Hello: {name}</h1>
+      <h1 className="text-3xl font-bold underline" >Hello: {name}</h1>
       <p>Good: {isMoring ? "Moring" : "Evening"}</p>
       <p>The cureent tine is: {new Date().toString()}</p>
     </>
