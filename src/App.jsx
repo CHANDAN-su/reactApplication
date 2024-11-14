@@ -12,6 +12,7 @@ import Reusability from "../Component/Reusability";
 import SeparationofConcerns from "../Component/SeparationofConcerns";
 import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
+import AllEvent from "../Component/Event";
 
 function App() {
   
@@ -25,8 +26,9 @@ function App() {
       {/* < HierarchicalStructure /> */}
       {/* < Reusability /> */}
       {/* <SeparationofConcerns /> */}
-      < JavascriptXML />
+      {/* < JavascriptXML /> */}
       {/* <Compsition/> */}
+      < AllEvent />
     </>
   )
 }
