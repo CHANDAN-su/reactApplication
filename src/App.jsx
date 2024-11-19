@@ -13,6 +13,7 @@ import SeparationofConcerns from "../Component/SeparationofConcerns";
 import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
+import HighOrderComponents from "../Component/HighOrderComponents";
 
 function App() {
   
@@ -28,7 +29,8 @@ function App() {
       {/* <SeparationofConcerns /> */}
       {/* < JavascriptXML /> */}
       {/* <Compsition/> */}
-      < AllEvent />
+      {/* < AllEvent /> */}
+      < HighOrderComponents />
     </>
   )
 }

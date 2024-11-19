@@ -114,9 +114,23 @@ function From() {
 
   return (
       <form onSubmit={handleSubmit}>
-        <input type="text" value={value} onClick={handleChange} />
+        <input type="text" value={value} onChange={handleChange} />
         <button type='submit'>Submit</button>
       </form>
+  )
+}
+
+function PreventLink(){
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    alert("Link clicked, but default behavior prevented.")
+  }
+
+  return(
+    <a href="https://example.com" onClick={handleClick}>
+      Click this link
+    </a>
   )
 }
 
@@ -130,6 +144,7 @@ function AllEvent() {
       <GreetUser />
       <GreetUserBind />
       <From/>
+      < PreventLink />
     </>
   )
 }
