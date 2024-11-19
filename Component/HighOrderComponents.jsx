@@ -108,7 +108,31 @@ function HelloWorld({user}){
 
 const EnhancedHelloWord = withLogger(HelloWorld);
 
+// Higher-Order Component to check authentication
+const withAuth = (WrappedComponent) => {
+    return (props) => {
+
+        const { isAuthenticated } = props;
+
+        if (!isAuthenticated) {
+            return <h2>Please log in to view this content.</h2>;
+        }
+
+        return < WrappedComponent {...props}/>
+    }
+}
+
+const hello = ({user}) => {
+    return <h1>Welcome: {user}</h1>
+}
+
+const EnhancedUser = withAuth(hello);
+
+
 function HighOrderComponents() {
+
+    const userIsAuthenticated  = true;
+
   return (
     <>
         {/* single component  */}
@@ -127,6 +151,7 @@ function HighOrderComponents() {
         < EnhancedBhanu1 name="Bhanu" />
         < EnhancedChandan1 name="Chandan" />
         < EnhancedHelloWord user={"world"} />
+        < EnhancedUser isAuthenticated={userIsAuthenticated} user={"Chandan Thakur"} />
 
     </>
   )
