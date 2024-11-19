@@ -4,6 +4,7 @@ import Hoc  from "../Component/HOC/Hoc";
 import  Rahul  from "../Component/HOC/Rahul";
 import  Bhanu  from "../Component/HOC/Bhanu";
 import  Chandan from "../Component/HOC/Chandan";
+import HocOfDataFetch from "../Component/HOC/HocOfDataFetch"
 
 // function Army(Man){
 
@@ -152,6 +153,7 @@ function HighOrderComponents() {
         < EnhancedChandan1 name="Chandan" />
         < EnhancedHelloWord user={"world"} />
         < EnhancedUser isAuthenticated={userIsAuthenticated} user={"Chandan Thakur"} />
+        < HocOfDataFetch />
 
     </>
   )
