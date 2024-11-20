@@ -8,6 +8,7 @@ function Home() {
         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
         </ul>
     </nav>
         <h1>Home Page</h1>

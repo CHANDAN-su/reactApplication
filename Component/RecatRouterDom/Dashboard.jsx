@@ -1,7 +1,14 @@
 import React from 'react'
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet,useNavigate } from "react-router-dom";
 
 function Dashboard() {
+
+    const navigate = useNavigate();
+
+    const GotoHome = () => {
+        navigate("/")
+    }
+
   return (
     <div>
         <h1>Dashboard</h1>
@@ -14,6 +21,8 @@ function Dashboard() {
                 <Link to="settings">Settings</Link>
             </li>
         </ul>
+
+        <button onClick={GotoHome}>Go to About Page</button>
 
         <Outlet/>
 
