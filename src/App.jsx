@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import { BrowserRouter, Routes , Route } from "react-router-dom";
+import Home from "../Component/RecatRouterDom/Home";
+import About from "../Component/RecatRouterDom/About";
+import NotFound from "../Component/RecatRouterDom/NotFound";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -30,7 +34,16 @@ function App() {
       {/* < JavascriptXML /> */}
       {/* <Compsition/> */}
       {/* < AllEvent /> */}
-      < HighOrderComponents />
+      {/* < HighOrderComponents /> */}
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={< Home />} />
+          <Route path="/about" element={< About />} />
+          <Route path="*" element={< NotFound />} />
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 }
