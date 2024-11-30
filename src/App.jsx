@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes , Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../Component/RecatRouterDom/Home";
 import About from "../Component/RecatRouterDom/About";
 import NotFound from "../Component/RecatRouterDom/NotFound";
@@ -9,7 +9,7 @@ import Settings from "../Component/RecatRouterDom/Settings";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import FunctionComponent  from "../Component/FunctionComponent";
+import FunctionComponent from "../Component/FunctionComponent";
 import ClassComponent from "../Component/ClassComponent";
 import User from "../Component/User";
 import ContainerComponent from "../Component/ContainerComponent";
@@ -23,7 +23,7 @@ import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
 
 function App() {
-  
+
   return (
     <>
       {/* <FunctionComponent />
@@ -51,9 +51,13 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-    <BrowserRouter>
-        < Home />
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
 
     </>
   )
