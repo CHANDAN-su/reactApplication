@@ -39,7 +39,7 @@ function App() {
       {/* < AllEvent /> */}
       {/* < HighOrderComponents /> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={< Home />} />
           <Route path="/about" element={< About />} />
@@ -49,7 +49,11 @@ function App() {
           </Route>
           <Route path="*" element={< NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+    <BrowserRouter>
+        < Home />
+    </BrowserRouter>
 
     </>
   )
