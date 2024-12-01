@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "../Component/RecatRouterDom/Home";
 import About from "../Component/RecatRouterDom/About";
 import NotFound from "../Component/RecatRouterDom/NotFound";
@@ -9,6 +9,7 @@ import Settings from "../Component/RecatRouterDom/Settings";
 import Navigation from "../Component/RecatRouterDom/Navigation";
 import User1 from "../Component/RecatRouterDom/User";
 import Index from "../Component/RecatRouterDom/Index";
+import Login from "../Component/RecatRouterDom/Login";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -26,6 +27,11 @@ import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
 
 function App() {
+
+  const ProtectRoute = ({element}) => {
+    const isAuthenticated = true;
+    return isAuthenticated ? element : < Navigate to="/login" />
+  }
 
   return (
     <>
@@ -66,7 +72,8 @@ function App() {
             <Route /> 
           </Route>
           <Route path='*' element={<NotFound />} />
-          <Route path='/user/:id' element={< User1 />} />
+          <Route path='/user/:id' element={< ProtectRoute element={<User1 />} />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </BrowserRouter>
 
