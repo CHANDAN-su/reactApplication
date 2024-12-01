@@ -8,6 +8,7 @@ import Profile from "../Component/RecatRouterDom/Profile";
 import Settings from "../Component/RecatRouterDom/Settings";
 import Navigation from "../Component/RecatRouterDom/Navigation";
 import User1 from "../Component/RecatRouterDom/User";
+import Index from "../Component/RecatRouterDom/Index";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -59,6 +60,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/dashboard' element={<Dashboard />} >
+            <Route index element={<Index />} />
             <Route path='profile' element={<Profile/>}/> 
             <Route path='settings' element={<Settings/>}/> 
             <Route /> 
