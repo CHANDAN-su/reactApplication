@@ -7,6 +7,7 @@ import Dashboard from "../Component/RecatRouterDom/Dashboard";
 import Profile from "../Component/RecatRouterDom/Profile";
 import Settings from "../Component/RecatRouterDom/Settings";
 import Navigation from "../Component/RecatRouterDom/Navigation";
+import User1 from "../Component/RecatRouterDom/User";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -63,6 +64,7 @@ function App() {
             <Route /> 
           </Route>
           <Route path='*' element={<NotFound />} />
+          <Route path='/user/:id' element={< User1 />} />
         </Routes>
       </BrowserRouter>
 
