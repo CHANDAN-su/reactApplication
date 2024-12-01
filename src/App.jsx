@@ -10,6 +10,7 @@ import Navigation from "../Component/RecatRouterDom/Navigation";
 import User1 from "../Component/RecatRouterDom/User";
 import Index from "../Component/RecatRouterDom/Index";
 import Login from "../Component/RecatRouterDom/Login";
+import Loaddata from "../Component/RecatRouterDom/Loaddata";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -74,6 +75,10 @@ function App() {
           <Route path='*' element={<NotFound />} />
           <Route path='/user/:id' element={< ProtectRoute element={<User1 />} />} />
           <Route path='/login' element={<Login />} />
+          <Route path="/loaddata" element={< Loaddata />} loader={ async () => {
+            const reponse = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+            return reponse.json();
+          }}/>
         </Routes>
       </BrowserRouter>
 
