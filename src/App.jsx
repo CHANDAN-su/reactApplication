@@ -75,10 +75,10 @@ function App() {
           <Route path='*' element={<NotFound />} />
           <Route path='/user/:id' element={< ProtectRoute element={<User1 />} />} />
           <Route path='/login' element={<Login />} />
-          <Route path="/loaddata" element={< Loaddata />} loader={ async () => {
+          {/* <Route path="/loaddata" element={< Loaddata />} loader={ async () => {
             const reponse = await fetch("https://jsonplaceholder.typicode.com/todos/1");
             return reponse.json();
-          }}/>
+          }}/> */}
         </Routes>
       </BrowserRouter>
 
