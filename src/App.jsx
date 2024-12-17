@@ -14,6 +14,7 @@ import Loaddata from "../Component/RecatRouterDom/Loaddata";
 import DashboardNestedRoute from "../Component/RecatRouterDom/DashboardNestedRoute";
 import Lauout from "../Component/RecatRouterDom/Lauout";
 import MainLayout from "../Component/RecatRouterDom/MainLayout";
+import MainApp from "../Component/RecatRouterDom/NestedRoute/MainApp";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -64,18 +65,18 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Navigation />
         <Routes>
           <Route path='/*' element={<MainLayout />} />
           <Route path='/about' element={<About />} />
           <Route path="/dashboardNestedRoute/*" element={<DashboardNestedRoute />}/>
-          {/* <Route path='/dashboard' element={<Dashboard />} >
+          <Route path='/dashboard' element={<Dashboard />} >
             <Route index element={<Index />} />
             <Route path='profile' element={<Profile/>}/> 
             <Route path='settings' element={<Settings/>}/> 
             <Route /> 
-          </Route> */}
+          </Route>
           <Route path='*' element={<NotFound />} />
           <Route path='/user/:id' element={< ProtectRoute element={<User1 />} />} />
           <Route path='/login' element={<Login />} />
@@ -84,7 +85,9 @@ function App() {
             return reponse.json();
           }}/>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+
+      <MainApp/>
 
     </>
   )
