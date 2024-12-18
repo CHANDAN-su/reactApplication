@@ -16,6 +16,7 @@ import Lauout from "../Component/RecatRouterDom/Lauout";
 import MainLayout from "../Component/RecatRouterDom/MainLayout";
 import MainApp from "../Component/RecatRouterDom/NestedRoute/MainApp";
 import Dynamicroute from "../Component/RecatRouterDom/DynamicRoutes/Dynamicroute";
+import MultipleParametersDynamicRoute from "../Component/RecatRouterDom/DynamicRoutes/MultipleParametersDynamicRoute";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -90,7 +91,8 @@ function App() {
 
       {/* <MainApp/> */}
       <BrowserRouter>
-        <Dynamicroute/>
+        {/* <Dynamicroute/> */}
+        <MultipleParametersDynamicRoute/>
       </BrowserRouter>
 
     </>
