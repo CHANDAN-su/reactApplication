@@ -15,6 +15,7 @@ import DashboardNestedRoute from "../Component/RecatRouterDom/DashboardNestedRou
 import Lauout from "../Component/RecatRouterDom/Lauout";
 import MainLayout from "../Component/RecatRouterDom/MainLayout";
 import MainApp from "../Component/RecatRouterDom/NestedRoute/MainApp";
+import Dynamicroute from "../Component/RecatRouterDom/DynamicRoutes/Dynamicroute";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -87,7 +88,10 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <MainApp/>
+      {/* <MainApp/> */}
+      <BrowserRouter>
+        <Dynamicroute/>
+      </BrowserRouter>
 
     </>
   )
