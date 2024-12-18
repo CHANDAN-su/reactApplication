@@ -18,6 +18,7 @@ import MainApp from "../Component/RecatRouterDom/NestedRoute/MainApp";
 import Dynamicroute from "../Component/RecatRouterDom/DynamicRoutes/Dynamicroute";
 import MultipleParametersDynamicRoute from "../Component/RecatRouterDom/DynamicRoutes/MultipleParametersDynamicRoute";
 import DynamicRouteWithNestedRoute from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithNestedRoute";
+import DynamicRouteWithQueryParameter from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithQueryParameter";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -94,7 +95,8 @@ function App() {
       <BrowserRouter>
         {/* <Dynamicroute/> */}
         {/* <MultipleParametersDynamicRoute/> */}
-        <DynamicRouteWithNestedRoute/>
+        {/* <DynamicRouteWithNestedRoute/> */}
+        <DynamicRouteWithQueryParameter />
       </BrowserRouter>
 
     </>
