@@ -5,7 +5,8 @@ const SearcgRoute = () => {
 
     const location = useLocation();
     // const queryParams = new URLSearchParams(location.search);
-    const queryParams = new URLSearchParams(location.content);
+    // const queryParams = new URLSearchParams(location.content);
+    const queryParams = new URLSearchParams(location.product);
 
     // const searchQuery = queryParams.get('search');
     // const query = queryParams.get("query");
@@ -15,8 +16,11 @@ const SearcgRoute = () => {
     // const query12 = queryParams.get("quuery12") || "No Search Query";
     // const page123 = queryParams.get("page123") || 1;
 
-    const page = queryParams.get("page") || 1;
-    const limit = queryParams.get("limit") || 10;
+    // const page = queryParams.get("page") || 1;
+    // const limit = queryParams.get("limit") || 10;
+
+    const sortby = queryParams.get("sortby") || "name";
+    const sortOrder = queryParams.get("sortOrder") || "asc";
 
     return (
         <>
@@ -35,7 +39,9 @@ const SearcgRoute = () => {
                 <p>Page: <strong>{page123}</strong></p>
             </div> */}
 
-            <h3>Page {page} - Showing {limit} items per page</h3>
+            {/* <h3>Page {page} - Showing {limit} items per page</h3> */}
+
+            <h3>Products - Sorting by {sortby} ({sortOrder})</h3>
 
         </>
     )
@@ -64,18 +70,25 @@ function DynamicRouteWithQueryParameter() {
                 <li>
                     <Link to="search?page123=2">Page123</Link>
                 </li> */}
-                <li>
+                {/* <li>
                     <Link to="content?page=1&limit=10">Page 1 limit 10</Link>
                 </li>
                 <li>
                     <Link to="content?page=2&limit=10">Page 2 limit 10</Link>
+                </li> */}
+                <li>
+                    <Link to="product?sortby=price&sortOrder=acd">Sort By price</Link>
+                </li>
+                <li>
+                    <Link to="product?sortby=name&sortOrder=des">Sort By name</Link>
                 </li>
             </nav>
 
             <Routes>
                 <Route path="/" element={<h1>Home Page</h1>} />
                 {/* <Route path="/search" element={<SearcgRoute />} /> */}
-                <Route path="/content" element={<SearcgRoute />} />
+                {/* <Route path="/content" element={<SearcgRoute />} /> */}
+                <Route path='/product' element={<SearcgRoute/>}/>
             </Routes>
         </>
     )
