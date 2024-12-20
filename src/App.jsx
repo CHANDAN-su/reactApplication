@@ -19,6 +19,7 @@ import Dynamicroute from "../Component/RecatRouterDom/DynamicRoutes/Dynamicroute
 import MultipleParametersDynamicRoute from "../Component/RecatRouterDom/DynamicRoutes/MultipleParametersDynamicRoute";
 import DynamicRouteWithNestedRoute from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithNestedRoute";
 import DynamicRouteWithQueryParameter from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithQueryParameter";
+import LazyLoading from "../Component/RecatRouterDom/LazyLoading/LazyLoading";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -37,7 +38,7 @@ import HighOrderComponents from "../Component/HighOrderComponents";
 
 function App() {
 
-  const ProtectRoute = ({element}) => {
+  const ProtectRoute = ({ element }) => {
     const isAuthenticated = true;
     return isAuthenticated ? element : < Navigate to="/login" />
   }
@@ -92,11 +93,15 @@ function App() {
       </BrowserRouter> */}
 
       {/* <MainApp/> */}
+      {/* <BrowserRouter> */}
+      {/* <Dynamicroute/> */}
+      {/* <MultipleParametersDynamicRoute/> */}
+      {/* <DynamicRouteWithNestedRoute/> */}
+      {/* <DynamicRouteWithQueryParameter /> */}
+      {/* </BrowserRouter> */}
+
       <BrowserRouter>
-        {/* <Dynamicroute/> */}
-        {/* <MultipleParametersDynamicRoute/> */}
-        {/* <DynamicRouteWithNestedRoute/> */}
-        <DynamicRouteWithQueryParameter />
+        <LazyLoading />
       </BrowserRouter>
 
     </>
