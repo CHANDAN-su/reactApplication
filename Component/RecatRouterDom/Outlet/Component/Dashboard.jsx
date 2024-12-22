@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
 function Dashboard() {
   return (
@@ -8,10 +8,18 @@ function Dashboard() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="profile">Profile</Link>
+                        {/* <Link to="profile">Profile</Link> */}
+                        <NavLink to="profile" className={({isActive}) => (isActive? "active": "")}>Profile</NavLink>
                     </li>
                     <li>
-                        <Link to="settings">Settings</Link>
+                        {/* <Link to="settings">Settings</Link> */}
+                        <NavLink to="settings" className={({isActive}) => (isActive? "active": "")}>Settings</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard">Dashboard</NavLink>
                     </li>
                 </ul>
             </nav>
