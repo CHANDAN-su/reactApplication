@@ -11,6 +11,15 @@ import User1 from "../Component/RecatRouterDom/User";
 import Index from "../Component/RecatRouterDom/Index";
 import Login from "../Component/RecatRouterDom/Login";
 import Loaddata from "../Component/RecatRouterDom/Loaddata";
+import DashboardNestedRoute from "../Component/RecatRouterDom/DashboardNestedRoute";
+import Lauout from "../Component/RecatRouterDom/Lauout";
+import MainLayout from "../Component/RecatRouterDom/MainLayout";
+import MainApp from "../Component/RecatRouterDom/NestedRoute/MainApp";
+import Dynamicroute from "../Component/RecatRouterDom/DynamicRoutes/Dynamicroute";
+import MultipleParametersDynamicRoute from "../Component/RecatRouterDom/DynamicRoutes/MultipleParametersDynamicRoute";
+import DynamicRouteWithNestedRoute from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithNestedRoute";
+import DynamicRouteWithQueryParameter from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithQueryParameter";
+import LazyLoading from "../Component/RecatRouterDom/LazyLoading/LazyLoading";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -29,7 +38,7 @@ import HighOrderComponents from "../Component/HighOrderComponents";
 
 function App() {
 
-  const ProtectRoute = ({element}) => {
+  const ProtectRoute = ({ element }) => {
     const isAuthenticated = true;
     return isAuthenticated ? element : < Navigate to="/login" />
   }
@@ -61,11 +70,12 @@ function App() {
         </Routes>
       </BrowserRouter> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Navigation />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/*' element={<MainLayout />} />
           <Route path='/about' element={<About />} />
+          <Route path="/dashboardNestedRoute/*" element={<DashboardNestedRoute />}/>
           <Route path='/dashboard' element={<Dashboard />} >
             <Route index element={<Index />} />
             <Route path='profile' element={<Profile/>}/> 
@@ -80,6 +90,18 @@ function App() {
             return reponse.json();
           }}/> */}
         </Routes>
+      </BrowserRouter> */}
+
+      {/* <MainApp/> */}
+      {/* <BrowserRouter> */}
+      {/* <Dynamicroute/> */}
+      {/* <MultipleParametersDynamicRoute/> */}
+      {/* <DynamicRouteWithNestedRoute/> */}
+      {/* <DynamicRouteWithQueryParameter /> */}
+      {/* </BrowserRouter> */}
+
+      <BrowserRouter>
+        <LazyLoading />
       </BrowserRouter>
 
     </>
