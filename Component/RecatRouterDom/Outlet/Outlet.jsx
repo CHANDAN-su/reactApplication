@@ -4,6 +4,7 @@ import Home from "../Outlet/Component/Home";
 import Dashboard from "../Outlet/Component/Dashboard";
 import Profile from "../Outlet/Component/Profile";
 import Settings from "../Outlet/Component/Settings";
+import User from "../Outlet/Component/User";
 
 function Outlet() {
   return (
@@ -27,6 +28,7 @@ function Outlet() {
             <Route path="settings" element={<Settings/>} />
             <Route />
          </Route>
+         <Route path="/user/:id" element={<User/>} />
       </Routes>
     </>
   );
