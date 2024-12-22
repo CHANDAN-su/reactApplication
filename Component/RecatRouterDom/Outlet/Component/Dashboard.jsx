@@ -13,7 +13,12 @@ function Dashboard() {
                     </li>
                     <li>
                         {/* <Link to="settings">Settings</Link> */}
-                        <NavLink to="settings" className={({isActive}) => (isActive? "active": "")}>Settings</NavLink>
+                        {/* <NavLink to="settings" className={({isActive}) => (isActive? "active": "")}>Settings</NavLink> */}
+                        <NavLink to="settings" style={({isActive}) => ({
+                            color: isActive? "red": "blue",
+                            fontWeight: isActive? "bold": "normal",
+                            fontSize: isActive? "30px": "18px"
+                        })}>Settings</NavLink>
                     </li>
                     <li>
                         <NavLink to="/">Home</NavLink>
