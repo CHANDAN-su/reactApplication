@@ -20,6 +20,7 @@ import MultipleParametersDynamicRoute from "../Component/RecatRouterDom/DynamicR
 import DynamicRouteWithNestedRoute from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithNestedRoute";
 import DynamicRouteWithQueryParameter from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithQueryParameter";
 import LazyLoading from "../Component/RecatRouterDom/LazyLoading/LazyLoading";
+import Outlet from "../Component/RecatRouterDom/Outlet/Outlet";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -85,12 +86,12 @@ function App() {
           <Route path='*' element={<NotFound />} />
           <Route path='/user/:id' element={< ProtectRoute element={<User1 />} />} />
           <Route path='/login' element={<Login />} />
-          <Route path="/loaddata" element={< Loaddata />} loader={ async () => {
+          {/* <Route path="/loaddata" element={< Loaddata />} loader={ async () => {
             const reponse = await fetch("https://jsonplaceholder.typicode.com/todos/1");
             return reponse.json();
-          }}/>
-        </Routes>
-      </BrowserRouter> */}
+          }}/> */}
+        {/* </Routes> */}
+      {/* </BrowserRouter>  */}
 
       {/* <MainApp/> */}
       {/* <BrowserRouter> */}
@@ -100,8 +101,12 @@ function App() {
       {/* <DynamicRouteWithQueryParameter /> */}
       {/* </BrowserRouter> */}
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <LazyLoading />
+      </BrowserRouter> */}
+
+      <BrowserRouter>
+        <Outlet/>
       </BrowserRouter>
 
     </>
