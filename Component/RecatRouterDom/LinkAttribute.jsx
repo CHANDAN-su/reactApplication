@@ -1,5 +1,6 @@
 import React from 'react'
-import { Routes, Route, Link } from "react-router-dom";
+import { use } from 'react';
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -16,6 +17,56 @@ const Profile = () => {
             <h1>Profile Page</h1>
             <p>This is profile page</p>
         </div>
+    )
+}
+
+const Products = () => {
+
+    const productList  = [
+        { id: 1, name: "Laptop", price: 1500 },
+        { id: 2, name: "Smartphone", price: 800 },
+        { id: 3, name: "Headphones", price: 200 },
+    ]
+
+    return (
+        <>
+            <div>
+                <h1>Products</h1>
+                <ul>
+                    {productList.map((products) => (
+                        <li key={products.id}> <Link to="product-details" state={{
+                            productId: products.id,
+                            productsName: products.name,
+                            productsPrice: products.price
+                        }}>{products.name}</Link></li>
+                    ))}
+                </ul>
+            </div>
+        </>
+    )
+}
+
+const ProductsDetails = () => {
+
+    const location = useLocation();
+    const {productId, productsName, productsPrice } = location.state || {}
+
+
+    return (
+        <>
+            <div>
+                <h1>Product Details</h1>
+                {productId ? (
+                    <div>
+                        <p><strong>Product Id</strong>{productId}</p>
+                        <p><strong>Name</strong>{productsName}</p>
+                        <p><strong>Price</strong>{productsPrice}</p>
+                    </div>
+                ) : (
+                    <p>No product details available.</p>
+                )}
+            </div>
+        </>
     )
 }
 
@@ -39,6 +90,8 @@ function LinkAttribute() {
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path='/profile' element={<Profile/>} />
+            <Route path='/product' element={<Products/>} />
+            <Route path='/product/product-details' element={<ProductsDetails/>} />
         </Routes>
     </>
   )
