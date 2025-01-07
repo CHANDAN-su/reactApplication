@@ -113,7 +113,12 @@ function LinkAttribute() {
                 </li>
                 <li>
                     {/* Link with replace */}
-                    <Link to="profile" replace={true}>Profile</Link>
+                    <Link to={{
+                        pathname: "/profile",
+                        search: "?name=chandan",
+                        hash: "#details",
+                        state: {from : "HomePage"}
+                    }} replace={true}>Profile</Link>
                 </li>
             </ul>
         </nav>
