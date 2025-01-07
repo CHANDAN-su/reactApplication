@@ -1,6 +1,7 @@
 import React from 'react'
 import { use } from 'react';
 import { Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
+import "../RecatRouterDom/style.css";
 
 const Home = () => {
     return (
@@ -34,11 +35,11 @@ const Products = () => {
                 <h1>Products</h1>
                 <ul>
                     {productList.map((products) => (
-                        <li key={products.id}> <Link to="product-details" state={{
+                        <li key={products.id} style={{padding: "15px"}}> <Link to="product-details" state={{
                             productId: products.id,
                             productsName: products.name,
                             productsPrice: products.price
-                        }}>{products.name}</Link></li>
+                        }} className='my-class'>{products.name}</Link></li>
                     ))}
                 </ul>
             </div>
@@ -77,7 +78,7 @@ const Dashboard  = () => {
                 <ul>
                     <li>
                         {/* Default behavior (relative="route") */}
-                        <Link to="settings">Setting</Link>
+                        <Link to="settings" className={({isActive}) => (isActive ? "active-class" : "inactive-class")}>Setting</Link>
                     </li>
                     <li>
                         {/* Explicit relative="path" */}
