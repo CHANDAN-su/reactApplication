@@ -82,7 +82,7 @@ const Dashboard  = () => {
                     </li>
                     <li>
                         {/* Explicit relative="path" */}
-                        <Link to="profile" relative="path">Profile</Link>
+                        <Link to="profile" relative="path" style={{color: "green"}}>Profile</Link>
                     </li>
                 </ul>
             </nav>
