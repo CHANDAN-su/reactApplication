@@ -1,6 +1,6 @@
 import React from 'react'
 import { use } from 'react';
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -70,6 +70,36 @@ const ProductsDetails = () => {
     )
 }
 
+const Dashboard  = () => {
+    return (
+        <>
+            <nav>
+                <ul>
+                    <li>
+                        {/* Default behavior (relative="route") */}
+                        <Link to="settings">Setting</Link>
+                    </li>
+                    <li>
+                        {/* Explicit relative="path" */}
+                        <Link to="profile" relative="path">Profile</Link>
+                    </li>
+                </ul>
+            </nav>
+
+            <Outlet />
+        </>
+    )
+}
+
+const Settings = () => {
+    return (
+        <>
+            <h1>Setings Page</h1>
+            <p>This is settings page</p>
+        </>
+    )
+}
+
 function LinkAttribute() {
   return (
     <>
@@ -92,6 +122,10 @@ function LinkAttribute() {
             <Route path='/profile' element={<Profile/>} />
             <Route path='/product' element={<Products/>} />
             <Route path='/product/product-details' element={<ProductsDetails/>} />
+            <Route path='/dashboard/*' element={<Dashboard/>} > 
+                <Route path='settings' element={<Settings/>}/>
+                <Route path='profile' element={<Profile/>}/>
+            </Route>
         </Routes>
     </>
   )
