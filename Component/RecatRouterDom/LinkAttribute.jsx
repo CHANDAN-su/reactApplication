@@ -1,6 +1,6 @@
 import React from 'react'
 import { use } from 'react';
-import { Routes, Route, Link, useLocation, Outlet } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Outlet, NavLink } from "react-router-dom";
 import "../RecatRouterDom/style.css";
 
 const Home = () => {
@@ -83,6 +83,9 @@ const Dashboard  = () => {
                     <li>
                         {/* Explicit relative="path" */}
                         <Link to="profile" relative="path" style={{color: "green"}}>Profile</Link>
+                    </li>
+                    <li>
+                    <NavLink to="product" className={({isActive}) => (isActive ? "inactive-class" : "active-class")}>Product</NavLink>
                     </li>
                 </ul>
             </nav>
