@@ -6,7 +6,7 @@ const Home = () => {
     const negative = useNavigate();
 
     const getAbut = () => {
-        negative("/about");
+        negative("/about", {replace: true});
     }
 
     const getProfile = () => {
