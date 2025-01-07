@@ -1,0 +1,14 @@
+.my-class, .active-class{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.inactive-class{
+    color: red;
+}
+

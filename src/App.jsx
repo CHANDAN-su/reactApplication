@@ -21,6 +21,8 @@ import DynamicRouteWithNestedRoute from "../Component/RecatRouterDom/DynamicRout
 import DynamicRouteWithQueryParameter from "../Component/RecatRouterDom/DynamicRoutes/DynamicRouteWithQueryParameter";
 import LazyLoading from "../Component/RecatRouterDom/LazyLoading/LazyLoading";
 import Outlet from "../Component/RecatRouterDom/Outlet/Outlet";
+import LinkAttribute from "../Component/RecatRouterDom/LinkAttribute";
+import UseNavigate from "../Component/RecatRouterDom/Hooks/UseNavigate";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -106,7 +108,9 @@ function App() {
       </BrowserRouter> */}
 
       <BrowserRouter>
-        <Outlet/>
+        {/* <Outlet/> */}
+        {/* <LinkAttribute /> */}
+        <UseNavigate />
       </BrowserRouter>
 
     </>
