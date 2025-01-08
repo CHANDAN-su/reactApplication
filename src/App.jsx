@@ -25,6 +25,7 @@ import LinkAttribute from "../Component/RecatRouterDom/LinkAttribute";
 import UseNavigate from "../Component/RecatRouterDom/Hooks/UseNavigate";
 import RelativeNavigation from "../Component/RecatRouterDom/Hooks/RelativeNavigation/RelativeNavigation";
 import FormPage from "../Component/RecatRouterDom/FormPage";
+import FormUser from "../Component/RecatRouterDom/FormUser";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -123,6 +124,30 @@ const router1 = createBrowserRouter([
   }
 ]);
 
+const router2 = createBrowserRouter([
+  {
+    path: "/",
+    element: <h1>Home page</h1>
+  },
+  {
+    path: "/user/:userId",
+    element: <FormUser/>,
+    action: async ({request, params}) => {
+
+      const formDate = await request.formData();
+      const userId = params.userId;
+      
+      console.log({
+        userId , formDate: Object.fromEntries(formDate)
+      })
+      
+      return {
+        success: true, message: `User ${userId} updated successfully`
+      }
+    }
+  }
+])
+
 function App() {
 
   const ProtectRoute = ({ element }) => {
@@ -199,7 +224,7 @@ function App() {
       </BrowserRouter>
 
       {/* <RouterProvider router={router} /> */}
-      <RouterProvider router={router1} />
+      <RouterProvider router={router2} />
 
     </>
   )
