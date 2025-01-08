@@ -63,6 +63,23 @@ const router = createBrowserRouter([
   }
 ]);
 
+const router1 = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+    ],
+  },
+]);
+
 function App() {
 
   const ProtectRoute = ({ element }) => {
@@ -138,7 +155,8 @@ function App() {
         {/* <RelativeNavigation/> */}
       </BrowserRouter>
 
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
+      <RouterProvider router={router1} />
 
     </>
   )
