@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../Component/RecatRouterDom/Home";
 import About from "../Component/RecatRouterDom/About";
 import NotFound from "../Component/RecatRouterDom/NotFound";
@@ -39,6 +39,29 @@ import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>
+  },
+  {
+    path: "/about",
+    element: <About/>
+  },
+  {
+    path: "/profile",
+    element: <Profile/>
+  },
+  {
+    path: "/settings",
+    element: <Settings/>
+  },
+  {
+    path: "*",
+    element: <NotFound/>
+  }
+]);
 
 function App() {
 
@@ -112,8 +135,10 @@ function App() {
         {/* <Outlet/> */}
         {/* <LinkAttribute /> */}
         {/* <UseNavigate /> */}
-        <RelativeNavigation/>
+        {/* <RelativeNavigation/> */}
       </BrowserRouter>
+
+      <RouterProvider router={router} />
 
     </>
   )
