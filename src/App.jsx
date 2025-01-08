@@ -24,6 +24,7 @@ import Outlet from "../Component/RecatRouterDom/Outlet/Outlet";
 import LinkAttribute from "../Component/RecatRouterDom/LinkAttribute";
 import UseNavigate from "../Component/RecatRouterDom/Hooks/UseNavigate";
 import RelativeNavigation from "../Component/RecatRouterDom/Hooks/RelativeNavigation/RelativeNavigation";
+import FormPage from "../Component/RecatRouterDom/FormPage";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -101,6 +102,21 @@ const router1 = createBrowserRouter([
     },
     errorElement: <ErrorPage />
   },
+  {
+    path: "/submit",
+    element: <FormPage/>,
+    action: async ({request}) => {
+      const formData = await request.formData();
+      const name = formData.get("name");
+      const email = formData.get("email");
+
+      console.log(`Name: ${name} and Email: ${email}`);
+
+            // Return a response or redirect
+      return {sucess: true, message: "Form submitted successfully"}
+
+    }
+  }
 ]);
 
 function App() {
