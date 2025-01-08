@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, createBrowserRouter, RouterProvider, useRouteError } from "react-router-dom";
 import Home from "../Component/RecatRouterDom/Home";
 import About from "../Component/RecatRouterDom/About";
 import NotFound from "../Component/RecatRouterDom/NotFound";
@@ -72,6 +72,15 @@ const userLoader = async () => {
   return reponse.json();
 }
 
+const ErrorPage = () => {
+  const error = useRouteError();
+  return (
+    <>
+        return <h1>Error: {error.statusText || "Something went wrong!"}</h1>;
+    </>
+  )
+}
+
 const router1 = createBrowserRouter([
   {
     path: "/",
@@ -89,7 +98,8 @@ const router1 = createBrowserRouter([
     ],
     loader: async () => {
       return {message: "Welcome to the Home Page!"}
-    }
+    },
+    errorElement: <ErrorPage />
   },
 ]);
 
