@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Navigate, createBrowserRouter, RouterProvider, useRouteError } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, createBrowserRouter, RouterProvider, useRouteError, redirect } from "react-router-dom";
 import Home from "../Component/RecatRouterDom/Home";
 import About from "../Component/RecatRouterDom/About";
 import NotFound from "../Component/RecatRouterDom/NotFound";
@@ -113,9 +113,13 @@ const router1 = createBrowserRouter([
       console.log(`Name: ${name} and Email: ${email}`);
 
             // Return a response or redirect
-      return {sucess: true, message: "Form submitted successfully"}
+      // return {sucess: true, message: "Form submitted successfully"}
+      return redirect("/thank-you")
 
     }
+  },{
+    path: "/thank-you",
+    element: <h1>Thank you for your submission!</h1>,
   }
 ]);
 
