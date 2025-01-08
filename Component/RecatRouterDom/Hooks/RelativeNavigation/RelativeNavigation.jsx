@@ -5,6 +5,7 @@ import About from "../RelativeNavigation/About";
 import Dashboard from "../RelativeNavigation/Dashboard";
 import Profile from "../RelativeNavigation/Profile";
 import Settings from "../RelativeNavigation/Settings";
+import NavigationExample from "../RelativeNavigation/NavigationExample";
 
 function RelativeNavigation() {
   return (
@@ -30,6 +31,7 @@ function RelativeNavigation() {
                 <Route path='profile' element={<Profile/>} />
                 <Route path='settings' element={<Settings/>} />
             </Route>
+            <Route path='/navigate' element={<NavigationExample/>} />
         </Routes>
     </>
   )
