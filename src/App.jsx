@@ -63,6 +63,15 @@ const router = createBrowserRouter([
   }
 ]);
 
+const userLoader = async () => {
+  const reponse = await fetch("https://jsonplaceholder.typicode.com/users/1");
+  if (!reponse.ok) {
+    throw new Error("Failed to fetch user");
+  }
+
+  return reponse.json();
+}
+
 const router1 = createBrowserRouter([
   {
     path: "/",
@@ -71,12 +80,16 @@ const router1 = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
+        loader: userLoader,
       },
       {
         path: "profile",
         element: <Profile />,
       },
     ],
+    loader: async () => {
+      return {message: "Welcome to the Home Page!"}
+    }
   },
 ]);
 
