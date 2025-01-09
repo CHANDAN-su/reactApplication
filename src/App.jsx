@@ -232,8 +232,8 @@ function App() {
 
       {/* <LazyLoadingcreateBrowserRouter /> */}
       {/* <ShouldRevalidate/> */}
-      {/* <Handle/> */}
-      <Meta/>
+      <Handle/>
+      {/* <Meta/> */}
 
     </>
   )

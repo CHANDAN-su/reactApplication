@@ -52,7 +52,7 @@ return (
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout/>,
+        Component: Layout,
         handle: {pageTittle: "Main Layout"},
         children: [
             {
