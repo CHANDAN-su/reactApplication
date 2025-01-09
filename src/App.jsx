@@ -29,6 +29,7 @@ import FormUser from "../Component/RecatRouterDom/FormUser";
 import LazyLoadingcreateBrowserRouter  from "../Component/RecatRouterDom/Hooks/LazyLoading/LazyLoading";
 import ShouldRevalidate from "../Component/RecatRouterDom/Hooks/ShouldRevalidate";
 import Handle from "../Component/RecatRouterDom/Hooks/Handle";
+import Meta from "../Component/RecatRouterDom/Hooks/Meta";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -231,7 +232,8 @@ function App() {
 
       {/* <LazyLoadingcreateBrowserRouter /> */}
       {/* <ShouldRevalidate/> */}
-      <Handle/>
+      {/* <Handle/> */}
+      <Meta/>
 
     </>
   )
