@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider, Outlet, Link } from "react-router-
 
 const Home = () => <h1>This is Home Page</h1>;
 
-const Dashbboard = () => {
+const Dashboard = () => {
     return (
         <>
             <h1>This is dasjboard page</h1>
@@ -36,7 +36,7 @@ const router  =  createBrowserRouter([
 },
 {
     path: "/dashboard",
-    element: <Dashbboard/>,
+    element: <Dashboard/>,
     children: [
         {
             path: "profile",
@@ -52,7 +52,9 @@ const router  =  createBrowserRouter([
                 }   
             }
         }
-    ]
+    ],
+    // Defaults to false
+    caseSensitive: false
 }
 ])
 
