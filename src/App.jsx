@@ -30,6 +30,7 @@ import LazyLoadingcreateBrowserRouter  from "../Component/RecatRouterDom/Hooks/L
 import ShouldRevalidate from "../Component/RecatRouterDom/Hooks/ShouldRevalidate";
 import Handle from "../Component/RecatRouterDom/Hooks/Handle";
 import Meta from "../Component/RecatRouterDom/Hooks/Meta";
+import LoggingwithcreateBrowserRouter from "../Component/RecatRouterDom/Hooks/LoggingwithcreateBrowserRouter";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -232,8 +233,9 @@ function App() {
 
       {/* <LazyLoadingcreateBrowserRouter /> */}
       {/* <ShouldRevalidate/> */}
-      <Handle/>
+      {/* <Handle/> */}
       {/* <Meta/> */}
+      <LoggingwithcreateBrowserRouter/>
 
     </>
   )
