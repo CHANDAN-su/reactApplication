@@ -32,7 +32,8 @@ const FetchData = async () =>  {
 const router  =  createBrowserRouter([
 {
     path: "/",
-    element: <Home/>
+    element: <Home/>,
+    id: "homeRoute"
 },
 {
     path: "/dashboard",
