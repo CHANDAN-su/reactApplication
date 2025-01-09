@@ -27,6 +27,7 @@ import RelativeNavigation from "../Component/RecatRouterDom/Hooks/RelativeNaviga
 import FormPage from "../Component/RecatRouterDom/FormPage";
 import FormUser from "../Component/RecatRouterDom/FormUser";
 import LazyLoadingcreateBrowserRouter  from "../Component/RecatRouterDom/Hooks/LazyLoading/LazyLoading";
+import ShouldRevalidate from "../Component/RecatRouterDom/Hooks/ShouldRevalidate";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -227,7 +228,8 @@ function App() {
       {/* <RouterProvider router={router} /> */}
       {/* <RouterProvider router={router2} /> */}
 
-      <LazyLoadingcreateBrowserRouter />
+      {/* <LazyLoadingcreateBrowserRouter /> */}
+      <ShouldRevalidate/>
 
     </>
   )
