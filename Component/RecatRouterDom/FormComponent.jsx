@@ -3,6 +3,12 @@ import { createBrowserRouter, RouterProvider, Form } from "react-router-dom";
 
 
 const FormCom = () => {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Custom submit logic");
+    }
+
     return (
         <>
         <Form method='post'>
@@ -13,6 +19,13 @@ const FormCom = () => {
         <div>
             <label>UserName2:</label>
             <input type="text" name="username2" />
+        </div>
+        <button type='submit'>Submit</button>
+        </Form>
+        <Form method='post' onSubmit={handleSubmit}>
+        <div>
+            <label>UserName3:</label>
+            <input type="text" name="username3" />
         </div>
         <button type='submit'>Submit</button>
         </Form>
