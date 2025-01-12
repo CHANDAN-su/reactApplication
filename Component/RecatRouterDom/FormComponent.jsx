@@ -36,6 +36,9 @@ const FormCom = () => {
         </div>
         <button type='submit'>Submit</button>
         </Form>
+        <Form method='post' noValidate>
+            
+        </Form>
     </>
     )
 }
