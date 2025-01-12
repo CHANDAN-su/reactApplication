@@ -9,6 +9,13 @@ const FormCom = () => {
             <div><label>UserName: </label><input type="text" name='username' /></div><br />
             <div><button type='submit'>Submit</button></div>
         </Form>
+        <Form method='post' action='/submitForm'>
+        <div>
+            <label>UserName2:</label>
+            <input type="text" name="username2" />
+        </div>
+        <button type='submit'>Submit</button>
+        </Form>
     </>
     )
 }
