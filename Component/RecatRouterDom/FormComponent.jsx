@@ -37,6 +37,9 @@ const FormCom = () => {
         <button type='submit'>Submit</button>
         </Form>
         <Form method='post' noValidate>
+
+        </Form>
+        <Form method='post' encType='multipart.form-data'>
             
         </Form>
     </>
