@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet,useNavigate } from "react-router-dom";
+import { Link, Outlet,useNavigate, useLoaderData } from "react-router-dom";
 
 function Dashboard() {
 
@@ -8,6 +8,8 @@ function Dashboard() {
     const GotoHome = () => {
         navigate("/")
     }
+
+    const data = useLoaderData();
 
   return (
     <div>
@@ -23,6 +25,8 @@ function Dashboard() {
         </ul>
 
         <button onClick={GotoHome}>Go to About Page</button>
+        <p>{data.name}</p>
+        <p>{data.phone}</p>
 
         <Outlet/>
 
