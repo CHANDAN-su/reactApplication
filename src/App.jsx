@@ -35,6 +35,7 @@ import  Await from "../Component/RecatRouterDom/AwaitImport";
 import FormComponent from "../Component/RecatRouterDom/FormComponent";
 import UseNavtigate from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigate";
 import UseLocation from "../Component/RecatRouterDom/Hooks/AllHooks/UseLocation";
+import UseParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseParams";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -243,7 +244,8 @@ function App() {
       {/* <Await /> */}
       {/* < FormComponent /> */}
       {/* <UseNavtigate/> */}
-      <UseLocation/>
+      {/* <UseLocation/> */}
+      <UseParams/>
     </>
   )
 }
