@@ -36,6 +36,7 @@ import FormComponent from "../Component/RecatRouterDom/FormComponent";
 import UseNavtigate from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigate";
 import UseLocation from "../Component/RecatRouterDom/Hooks/AllHooks/UseLocation";
 import UseParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseParams";
+import UseMatch from "../Component/RecatRouterDom/Hooks/AllHooks/UseMatch";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -245,7 +246,8 @@ function App() {
       {/* < FormComponent /> */}
       {/* <UseNavtigate/> */}
       {/* <UseLocation/> */}
-      <UseParams/>
+      {/* <UseParams/> */}
+      <UseMatch />
     </>
   )
 }
