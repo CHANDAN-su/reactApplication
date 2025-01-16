@@ -37,6 +37,7 @@ import UseNavtigate from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigat
 import UseLocation from "../Component/RecatRouterDom/Hooks/AllHooks/UseLocation";
 import UseParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseParams";
 import UseMatch from "../Component/RecatRouterDom/Hooks/AllHooks/UseMatch";
+import UseNavtigateWithNavigation from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigateWithNavigation";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -247,7 +248,8 @@ function App() {
       {/* <UseNavtigate/> */}
       {/* <UseLocation/> */}
       {/* <UseParams/> */}
-      <UseMatch />
+      {/* <UseMatch /> */}
+      <UseNavtigateWithNavigation/>
     </>
   )
 }
