@@ -31,6 +31,10 @@ import ShouldRevalidate from "../Component/RecatRouterDom/Hooks/ShouldRevalidate
 import Handle from "../Component/RecatRouterDom/Hooks/Handle";
 import Meta from "../Component/RecatRouterDom/Hooks/Meta";
 import LoggingwithcreateBrowserRouter from "../Component/RecatRouterDom/Hooks/LoggingwithcreateBrowserRouter";
+import  Await from "../Component/RecatRouterDom/AwaitImport";
+import FormComponent from "../Component/RecatRouterDom/FormComponent";
+import UseNavtigate from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigate";
+import UseLocation from "../Component/RecatRouterDom/Hooks/AllHooks/UseLocation";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -235,8 +239,11 @@ function App() {
       {/* <ShouldRevalidate/> */}
       {/* <Handle/> */}
       {/* <Meta/> */}
-      <LoggingwithcreateBrowserRouter/>
-
+      {/* <LoggingwithcreateBrowserRouter/> */}
+      {/* <Await /> */}
+      {/* < FormComponent /> */}
+      {/* <UseNavtigate/> */}
+      <UseLocation/>
     </>
   )
 }
