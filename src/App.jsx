@@ -39,6 +39,7 @@ import UseParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseParams";
 import UseMatch from "../Component/RecatRouterDom/Hooks/AllHooks/UseMatch";
 import UseNavtigateWithNavigation from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigateWithNavigation";
 import UseSearchParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseSearchParams";
+import UseRouters from "../Component/RecatRouterDom/Hooks/AllHooks/UseRouters";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -251,7 +252,11 @@ function App() {
       {/* <UseParams/> */}
       {/* <UseMatch /> */}
       {/* <UseNavtigateWithNavigation/> */}
-      <UseSearchParams/>
+      {/* <UseSearchParams/> */}
+      <BrowserRouter >
+        <UseRouters/>
+      </BrowserRouter>
+      
     </>
   )
 }
