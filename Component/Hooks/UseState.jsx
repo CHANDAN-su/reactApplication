@@ -27,12 +27,44 @@ const Greeting = () => {
     )
 }
 
+const TodoList = () => {
+    const [task, setTask] = useState([]);
+
+    const addTask = () => {
+        const newTask = {id: task.length + 1 , text: `Task: ${task.length + 1}`}
+
+        setTask([...task, newTask])
+    }
+
+    const RemoveTask = (id) => {
+        setTask(task.filter((val) => val.id !== id));
+    }
+
+    return (
+        <>
+            <h1>Task list</h1>
+            <button onClick={addTask}>Add Task</button>
+            <nav>
+                <ul>
+                    {task.map((task) => (
+                        <li key={task.id}>{task.text} {' '}
+                         <button onClick={ () => RemoveTask(task.id)}>Remove a task</button></li>
+                    ))}
+                </ul>
+            </nav>
+        </>
+    )
+}
+
+
+
 
 function UseState() {
   return (
     <>  
         <Counter/>
         <Greeting/>
+        <TodoList/>
     </>
   )
 }
