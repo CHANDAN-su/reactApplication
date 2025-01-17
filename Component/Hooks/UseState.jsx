@@ -56,6 +56,25 @@ const TodoList = () => {
     )
 }
 
+const UserProfile = () => {
+    const [user, setUser] = useState({name: "", age: ""});
+
+    const updateName = (e) => {
+        setUser({...user, name: e.target.value})
+    }
+
+    const updateAge = (e) => {
+        setUser({...user, age: e.target.value})
+    }
+    return (
+        <>
+            <input type="text" value={user.name} onChange={updateName} placeholder='Enter your name..' />
+            <input type="text" value={user.age} onChange={updateAge} placeholder='Enter your age...' />
+            <h1>Name: {user.name} || Age: {user.age}</h1>
+        </>
+    )
+}
+
 
 
 
@@ -65,6 +84,7 @@ function UseState() {
         <Counter/>
         <Greeting/>
         <TodoList/>
+        <UserProfile/>
     </>
   )
 }
