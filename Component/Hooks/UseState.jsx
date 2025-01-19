@@ -75,6 +75,20 @@ const UserProfile = () => {
     )
 }
 
+function ExpensiveInitialization(){
+
+    const [count, setCount] = useState(() => {
+        console.log("Expensive computation");        
+        return 0;
+    })
+    return (
+        <>
+            <h1>Count: {count}</h1>
+            <button onClick={() => setCount(count+1)}>Increment</button>
+        </>
+    )
+}
+
 
 
 
@@ -85,6 +99,7 @@ function UseState() {
         <Greeting/>
         <TodoList/>
         <UserProfile/>
+        <ExpensiveInitialization/>
     </>
   )
 }
