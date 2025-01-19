@@ -90,7 +90,19 @@ function ExpensiveInitialization(){
 }
 
 
+const Counter1  = () => {
+    const [counter , setCounter] = useState(0);
 
+    const increment  = () => {
+        setCounter((prev) => prev + 1);
+    }
+    return (
+        <>
+            <h1>Counter: {counter}</h1>
+            <button onClick={increment}>Increment</button>
+        </>
+    )
+}
 
 function UseState() {
   return (
@@ -100,6 +112,7 @@ function UseState() {
         <TodoList/>
         <UserProfile/>
         <ExpensiveInitialization/>
+        <Counter1/>
     </>
   )
 }
