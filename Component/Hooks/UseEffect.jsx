@@ -9,6 +9,24 @@ import React, {useState, useEffect} from 'react'
 //     }, [dependencies]);
 // }
 
+const Timer = () => {
+    const [time, setTime] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime((prev) => prev +1)
+        }, 10000);
+
+        return () => clearInterval(interval);
+    },[])
+
+    return (
+        <>
+            <h1>Time: {time}</h1>
+        </>
+    )
+}
+
 
 function UseEffectDsta() {
 
@@ -41,6 +59,7 @@ function UseEffectDsta() {
                 ))}
             </ul>
         </div>
+        <Timer/>
     </>
   )
 }
