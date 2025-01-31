@@ -44,6 +44,7 @@ import UseActiveData from "../Component/RecatRouterDom/Hooks/AllHooks/UseActiveD
 import FetchingDatawithuseEffectHook from "../Component/RecatRouterDom/FetchingDatawithuseEffectHook";
 import UseState from "../Component/Hooks/UseState";
 import UseEffectDsta from "../Component/Hooks/UseEffect";
+import UseContextUse from "../Component/Hooks/UseContextUse";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -263,7 +264,8 @@ function App() {
       {/* <UseActiveData/> */}
       {/* <FetchingDatawithuseEffectHook/> */}
       {/* <UseState/> */}
-      <UseEffectDsta/>
+      {/* <UseEffectDsta/> */}
+      <UseContextUse/>
     </>
   )
 }
