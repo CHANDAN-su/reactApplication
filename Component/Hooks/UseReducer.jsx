@@ -1,20 +1,21 @@
 import React, { useReducer, useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-
-function reducer(state, action){
-    console.log(state, action);        
-    switch (action.type) {
-        case "increment":
-            return {count: state.count + 1};
-        case "decrement":
-            return {count: state.count -1};
-        default:
-            return state;
-    }
-}
-
 const Home = () => {
+
+    function reducer(state, action){
+        console.log(state, action);        
+        switch (action.type) {
+            case "increment":
+                return {count: state.count + 1};
+            case "decrement":
+                return {count: state.count -1};
+            default:
+                return state;
+        }
+    }
+
+
     const [counter, setCounter] = useState(0);
 
     // how to useReducer syntax
@@ -48,9 +49,24 @@ const Home = () => {
 }
 
 const About = () => {
+
+    function reducer(state, action){
+        if(action.type === "incremented_age"){
+            return {age: state.age + 1}
+        }
+        throw Error("Unknow action");
+    }
+
+    const [state, dispatch] = useReducer(reducer, {age: 42});
+
+    const incrementAge = () =>{
+        dispatch({type: "incremented_age"});
+    };
+
     return (
         <>
-        <h1>This is about page</h1>
+         <button onClick={incrementAge}>Increment age</button>
+         <h1>Age incrment {state.age}</h1>
         </>
     )
 }
