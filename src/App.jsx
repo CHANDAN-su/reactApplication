@@ -35,6 +35,16 @@ import  Await from "../Component/RecatRouterDom/AwaitImport";
 import FormComponent from "../Component/RecatRouterDom/FormComponent";
 import UseNavtigate from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigate";
 import UseLocation from "../Component/RecatRouterDom/Hooks/AllHooks/UseLocation";
+import UseParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseParams";
+import UseMatch from "../Component/RecatRouterDom/Hooks/AllHooks/UseMatch";
+import UseNavtigateWithNavigation from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigateWithNavigation";
+import UseSearchParams from "../Component/RecatRouterDom/Hooks/AllHooks/UseSearchParams";
+import UseRouters from "../Component/RecatRouterDom/Hooks/AllHooks/UseRouters";
+import UseActiveData from "../Component/RecatRouterDom/Hooks/AllHooks/UseActiveData";
+import FetchingDatawithuseEffectHook from "../Component/RecatRouterDom/FetchingDatawithuseEffectHook";
+import UseState from "../Component/Hooks/UseState";
+import UseEffectDsta from "../Component/Hooks/UseEffect";
+import UseContextUse from "../Component/Hooks/UseContextUse";
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -50,6 +60,7 @@ import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
+import UseReducer from "../Component/Hooks/UseReducer";
 
 const router = createBrowserRouter([
   {
@@ -243,7 +254,21 @@ function App() {
       {/* <Await /> */}
       {/* < FormComponent /> */}
       {/* <UseNavtigate/> */}
-      <UseLocation/>
+      {/* <UseLocation/> */}
+      {/* <UseParams/> */}
+      {/* <UseMatch /> */}
+      {/* <UseNavtigateWithNavigation/> */}
+      {/* <UseSearchParams/> */}
+      {/* <BrowserRouter >
+        <UseRouters/>
+      </BrowserRouter> */}
+      {/* <UseActiveData/> */}
+      {/* <FetchingDatawithuseEffectHook/> */}
+      {/* <UseState/> */}
+      {/* <UseEffectDsta/> */}
+      {/* <UseContextUse/> */}
+      <UseReducer/>
+
     </>
   )
 }
