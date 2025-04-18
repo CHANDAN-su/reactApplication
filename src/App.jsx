@@ -26,12 +26,12 @@ import UseNavigate from "../Component/RecatRouterDom/Hooks/UseNavigate";
 import RelativeNavigation from "../Component/RecatRouterDom/Hooks/RelativeNavigation/RelativeNavigation";
 import FormPage from "../Component/RecatRouterDom/FormPage";
 import FormUser from "../Component/RecatRouterDom/FormUser";
-import LazyLoadingcreateBrowserRouter  from "../Component/RecatRouterDom/Hooks/LazyLoading/LazyLoading";
+import LazyLoadingcreateBrowserRouter from "../Component/RecatRouterDom/Hooks/LazyLoading/LazyLoading";
 import ShouldRevalidate from "../Component/RecatRouterDom/Hooks/ShouldRevalidate";
 import Handle from "../Component/RecatRouterDom/Hooks/Handle";
 import Meta from "../Component/RecatRouterDom/Hooks/Meta";
 import LoggingwithcreateBrowserRouter from "../Component/RecatRouterDom/Hooks/LoggingwithcreateBrowserRouter";
-import  Await from "../Component/RecatRouterDom/AwaitImport";
+import Await from "../Component/RecatRouterDom/AwaitImport";
 import FormComponent from "../Component/RecatRouterDom/FormComponent";
 import UseNavtigate from "../Component/RecatRouterDom/Hooks/AllHooks/UseNavtigate";
 import UseLocation from "../Component/RecatRouterDom/Hooks/AllHooks/UseLocation";
@@ -60,27 +60,28 @@ import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
+import MainAppTheme from "../Component/AllExample/UseContextExample/App";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home />
   },
   {
     path: "/about",
-    element: <About/>
+    element: <About />
   },
   {
     path: "/profile",
-    element: <Profile/>
+    element: <Profile />
   },
   {
     path: "/settings",
-    element: <Settings/>
+    element: <Settings />
   },
   {
     path: "*",
-    element: <NotFound/>
+    element: <NotFound />
   }
 ]);
 
@@ -97,7 +98,7 @@ const ErrorPage = () => {
   const error = useRouteError();
   return (
     <>
-        return <h1>Error: {error.statusText || "Something went wrong!"}</h1>;
+      return <h1>Error: {error.statusText || "Something went wrong!"}</h1>;
     </>
   )
 }
@@ -118,26 +119,26 @@ const router1 = createBrowserRouter([
       },
     ],
     loader: async () => {
-      return {message: "Welcome to the Home Page!"}
+      return { message: "Welcome to the Home Page!" }
     },
     errorElement: <ErrorPage />
   },
   {
     path: "/submit",
-    element: <FormPage/>,
-    action: async ({request}) => {
+    element: <FormPage />,
+    action: async ({ request }) => {
       const formData = await request.formData();
       const name = formData.get("name");
       const email = formData.get("email");
 
       console.log(`Name: ${name} and Email: ${email}`);
 
-            // Return a response or redirect
+      // Return a response or redirect
       // return {sucess: true, message: "Form submitted successfully"}
       return redirect("/thank-you")
 
     }
-  },{
+  }, {
     path: "/thank-you",
     element: <h1>Thank you for your submission!</h1>,
   }
@@ -150,16 +151,16 @@ const router2 = createBrowserRouter([
   },
   {
     path: "/user/:userId",
-    element: <FormUser/>,
-    action: async ({request, params}) => {
+    element: <FormUser />,
+    action: async ({ request, params }) => {
 
       const formDate = await request.formData();
       const userId = params.userId;
-      
+
       console.log({
-        userId , formDate: Object.fromEntries(formDate)
+        userId, formDate: Object.fromEntries(formDate)
       })
-      
+
       return {
         success: true, message: `User ${userId} updated successfully`
       }
@@ -220,7 +221,7 @@ function App() {
             const reponse = await fetch("https://jsonplaceholder.typicode.com/todos/1");
             return reponse.json();
           }}/> */}
-        {/* </Routes> */}
+      {/* </Routes> */}
       {/* </BrowserRouter>  */}
 
       {/* <MainApp/> */}
@@ -265,7 +266,13 @@ function App() {
       {/* <FetchingDatawithuseEffectHook/> */}
       {/* <UseState/> */}
       {/* <UseEffectDsta/> */}
-      <UseContextUse/>
+      {/* <UseContextUse/> */}
+
+
+
+      {/* Example */}
+        <MainAppTheme />
+
     </>
   )
 }
