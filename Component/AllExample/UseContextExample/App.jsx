@@ -39,21 +39,49 @@
 
 
 // Example 3
+// import React from "react";
+// import { CartProider } from "./CartContext/CartContext";
+// import Cart from "./CartContext/Cart";
+// import ProductList from "./CartContext/ProductList";
+
+// function MainApp(){
+//     return(
+//         <CartProider>
+//             <div style={{padding: "30px"}}>
+//                 <h2>Your Stor</h2>
+//                 <Cart/>
+//                 <ProductList/>
+//             </div>
+//         </CartProider>
+//     )
+// }
+
+// export default MainApp;
+
+
+// Example 4
 import React from "react";
-import { CartProider } from "./CartContext/CartContext";
-import Cart from "./CartContext/Cart";
-import ProductList from "./CartContext/ProductList";
+import { UIProvider } from "./SidebarUIState/UIContext";
+import ToggleButton from "./SidebarUIState/ToggleButton";
+import Sidebar from "./SidebarUIState/Sidebar";
+
 
 function MainApp(){
-    return(
-        <CartProider>
-            <div style={{padding: "30px"}}>
-                <h2>Your Stor</h2>
-                <Cart/>
-                <ProductList/>
+    return (
+        <UIProvider>
+            <div style={{display: "flex"}}>
+                <Sidebar/>
+
+                <div style={{marginLeft: "30px", padding: "20px"}}>
+                    <ToggleButton/>
+                    <h1>Main Content Area</h1>
+                    <p>lick the button to toggle the sidebar</p>
+                </div>
+
             </div>
-        </CartProider>
+        </UIProvider>
     )
 }
+
 
 export default MainApp;
