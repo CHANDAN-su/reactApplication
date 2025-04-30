@@ -60,6 +60,7 @@ import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
+import UseRef from "../Component/Hooks/UseRef";
 
 const router = createBrowserRouter([
   {
@@ -266,6 +267,8 @@ function App() {
       {/* <UseState/> */}
       {/* <UseEffectDsta/> */}
       {/* <UseContextUse/> */}
+
+      <UseRef/>
 
     </>
   )
