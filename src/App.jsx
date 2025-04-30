@@ -60,7 +60,6 @@ import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
-import MainAppTheme from "../Component/AllExample/UseContextExample/App";
 
 const router = createBrowserRouter([
   {
@@ -267,11 +266,6 @@ function App() {
       {/* <UseState/> */}
       {/* <UseEffectDsta/> */}
       {/* <UseContextUse/> */}
-
-
-
-      {/* Example */}
-        <MainAppTheme />
 
     </>
   )

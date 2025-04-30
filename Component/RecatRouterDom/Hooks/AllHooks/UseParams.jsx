@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter, RouterProvider, useParams, useNavigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useParams, useNavigate, Router } from "react-router-dom";
 
 const Home = () => {
 
@@ -62,10 +62,10 @@ const router = createBrowserRouter([
 ]);
 
 
+
 function UseParams() {
   return (
     <>
-        < RouterProvider router={router}/>
     </>
   )
 }
