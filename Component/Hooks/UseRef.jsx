@@ -38,7 +38,16 @@
 
 
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, forwardRef  } from 'react'
+
+
+const MyInput = forwardRef((props, ref) => {
+    return (
+        <>
+            <input {...props} ref={ref} />
+        </>
+    )
+})
 
 function UseRef() {
 
@@ -50,6 +59,7 @@ function UseRef() {
     let inputRef = useRef(null);
     let listRef = useRef(null);
     let videoRef = useRef(null);
+    let myinputRef = useRef(null);
 
     const startTimer = () => {
         timeRef.current = setInterval(() => {
@@ -99,6 +109,10 @@ function UseRef() {
             videoRef.current.pause();
         }
 
+    }
+
+    const handleMyInput = () => {
+        myinputRef.current.focus();
     }
 
     return (
@@ -151,7 +165,7 @@ function UseRef() {
 
 
             <div className='videPlayer'>
-                
+
                 <button onClick={videhandle}>
                     {isPlaying ? "Pause" : "Play"}
                 </button>
@@ -163,6 +177,14 @@ function UseRef() {
                         type="video/mp4" />
                 </video>
             </div>
+            <br />
+            <br />
+
+            <div>
+                <MyInput ref={myinputRef}/>
+                <button onClick={handleMyInput}>Focus the input</button>
+            </div>
+
 
         </div>
     )
