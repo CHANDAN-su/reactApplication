@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 
 function UseMemo() {
 
@@ -23,6 +23,56 @@ function UseMemo() {
     // let doubleValue = expensiveTask(input);
     // let doubleValue = useMemo(() => expensiveTask(input), [input]);
 
+
+    // Sometimes, you might want to use a value inside an Effect:
+        let roomId = 56842538;
+
+        const option = {
+            serverUrl: "https://localhost:1234",
+            roomId: roomId
+        }
+
+        useEffect(() => {
+            const connection = createConnection(option);
+            connection.connect();
+
+            return () => {
+                connection.disconnect()
+            }
+        }, [option]);  //Problem: This dependency changes on every render
+
+
+        // To solve this, you can wrap the object you need to call from an Effect in useMemo:
+        const option1 = useMemo(() => {
+
+            const option = {
+                serverUrl: "https://localhost:1234",
+                roomId: roomId
+            }
+        }, [roomId]);   //Only changes when roomId changes
+
+        useEffect(() => {
+            const connection = createConnection(option);
+            connection.connect();
+
+            return () => {
+                connection.disconnect()
+            }
+        }, [option]);  //Only changes when options changes
+
+        // This will also cause the effect to re-fire, so it’s even better to remove the need for a function dependency by moving your object inside the Effect:
+
+        useEffect(() => {
+            const option = {
+                serverUrl: "https://localhost:1234",
+                roomId: roomId
+            }
+
+            const connection = createConnection(option);
+            connection.connect();
+
+            return () => connection.disconnect()
+        }, [roomId]);
 
 
   return (
@@ -53,3 +103,5 @@ function UseMemo() {
 }
 
 export default UseMemo
+
+
