@@ -61,6 +61,7 @@ import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
 import UseRef from "../Component/Hooks/UseRef";
+import UseMemo from "../Component/Hooks/UseMemo";
 
 const router = createBrowserRouter([
   {
@@ -268,7 +269,8 @@ function App() {
       {/* <UseEffectDsta/> */}
       {/* <UseContextUse/> */}
 
-      <UseRef/>
+      {/* <UseRef/> */}
+      <UseMemo/>
 
     </>
   )
