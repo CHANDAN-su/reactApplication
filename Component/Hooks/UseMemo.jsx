@@ -11,8 +11,17 @@ function UseMemo() {
         return num * 2;
     }
 
+
+    // console.time("filter array")    ;
     // let doubleValue = expensiveTask(input);
+    // console.timeEnd('filter array');
+
+    console.time("filter array")    ;
     let doubleValue = useMemo(() => expensiveTask(input), [input]);
+    console.timeEnd('filter array');
+
+    // let doubleValue = expensiveTask(input);
+    // let doubleValue = useMemo(() => expensiveTask(input), [input]);
 
 
 
