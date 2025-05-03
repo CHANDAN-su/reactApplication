@@ -105,3 +105,37 @@ function UseMemo() {
 export default UseMemo
 
 
+// Memoizing a dependency of another Hook 
+function Dropdown({allItems, text}){
+
+    const searchOption = {matchMode: "whole-word", text}
+
+    const visivisibleItems = useMemo(() => {
+        return searchItems(allItems, searchOption)
+    }, [allItems, searchOption])  // Caution: Dependency on an object created in the component body
+
+
+    // To fix this, you could memoize the searchOptions object itself before passing it as a dependency:
+
+    const searchOption1 = useMemo(() => {
+        return {matchMode: "whole-word", text}
+    }, [text]);
+
+    const visivisibleItems1 = useMemo(() => {
+        return searchItems(allItems, searchOption1);
+    }, [allItems, searchOption1]); //Only changes when allItems or searchOptions changes
+
+
+
+    const visibleItems  = useMemo(() => {
+        const searchOptions  = {matchMode: "whole-word", text}
+        return searchItems(allItems, searchOptions)
+    },[allItems, text])
+
+    return (
+        <>
+            <p>Memoizing a dependency of another Hook</p>
+        </>
+    )
+}
+
