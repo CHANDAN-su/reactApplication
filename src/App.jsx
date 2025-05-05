@@ -62,6 +62,8 @@ import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
 import UseRef from "../Component/Hooks/UseRef";
 import UseMemo from "../Component/Hooks/UseMemo";
+import UseCallback from "../Component/Hooks/UseCallback";
+import ExpensiveComponent from "../Component/Hooks/ExpensiveComponent";
 
 const router = createBrowserRouter([
   {
@@ -270,7 +272,9 @@ function App() {
       {/* <UseContextUse/> */}
 
       {/* <UseRef/> */}
-      <UseMemo/>
+      {/* <UseMemo/> */}
+      <UseCallback/>
+      <ExpensiveComponent/>
 
     </>
   )
