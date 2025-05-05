@@ -64,6 +64,7 @@ import UseRef from "../Component/Hooks/UseRef";
 import UseMemo from "../Component/Hooks/UseMemo";
 import UseCallback from "../Component/Hooks/UseCallback";
 import ExpensiveComponent from "../Component/Hooks/ExpensiveComponent";
+import UseImperativeHandle from "../Component/Hooks/UseImperativeHandle";
 
 const router = createBrowserRouter([
   {
@@ -273,8 +274,9 @@ function App() {
 
       {/* <UseRef/> */}
       {/* <UseMemo/> */}
-      <UseCallback/>
-      <ExpensiveComponent/>
+      {/* <UseCallback/> */}
+      {/* <ExpensiveComponent/> */}
+      <UseImperativeHandle/>
 
     </>
   )
