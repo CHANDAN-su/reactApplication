@@ -60,6 +60,12 @@ import JavascriptXML from "../Component/JavascriptXML";
 import Compsition from "../Component/Compsition";
 import AllEvent from "../Component/Event";
 import HighOrderComponents from "../Component/HighOrderComponents";
+import UseRef from "../Component/Hooks/UseRef";
+import UseMemo from "../Component/Hooks/UseMemo";
+import UseCallback from "../Component/Hooks/UseCallback";
+import ExpensiveComponent from "../Component/Hooks/ExpensiveComponent";
+import UseImperativeHandle from "../Component/Hooks/UseImperativeHandle";
+import UseLayoutEffect from "../Component/Hooks/UseLayoutEffect";
 
 const router = createBrowserRouter([
   {
@@ -266,6 +272,13 @@ function App() {
       {/* <UseState/> */}
       {/* <UseEffectDsta/> */}
       {/* <UseContextUse/> */}
+
+      {/* <UseRef/> */}
+      {/* <UseMemo/> */}
+      {/* <UseCallback/> */}
+      {/* <ExpensiveComponent/> */}
+      {/* <UseImperativeHandle/> */}
+      <UseLayoutEffect/>
 
     </>
   )
